@@ -3,6 +3,13 @@ import psycopg2
 import pandas as pd
 import matplotlib.pyplot as plt
 from dotenv import load_dotenv
+import matplotlib
+matplotlib.use("Agg")
+
+import matplotlib.pyplot as plt
+
+plt.rcParams["font.sans-serif"] = ["Microsoft JhengHei"]
+plt.rcParams["axes.unicode_minus"] = False
 
 load_dotenv()
 

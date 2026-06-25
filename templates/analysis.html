@@ -7,17 +7,13 @@
 <div class="row">
 
     <div class="col-md-6">
-
         <div class="card shadow-sm mb-4">
-
             <div class="card-header bg-primary text-white">
                 各縣市景點數量
             </div>
 
             <div class="card-body">
-
                 <table class="table table-bordered table-hover">
-
                     <thead class="table-primary">
                         <tr>
                             <th>縣市</th>
@@ -33,27 +29,19 @@
                         </tr>
                         {% endfor %}
                     </tbody>
-
                 </table>
-
             </div>
-
         </div>
-
     </div>
 
     <div class="col-md-6">
-
         <div class="card shadow-sm mb-4">
-
             <div class="card-header bg-success text-white">
                 景點類型數量
             </div>
 
             <div class="card-body">
-
                 <table class="table table-bordered table-hover">
-
                     <thead class="table-success">
                         <tr>
                             <th>類型</th>
@@ -69,29 +57,84 @@
                         </tr>
                         {% endfor %}
                     </tbody>
-
                 </table>
-
             </div>
-
         </div>
-
     </div>
 
 </div>
+
 <hr>
 
-<h2>各縣市景點數量長條圖</h2>
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+        各縣市景點數量長條圖
+    </div>
 
-<img
-src="{{ url_for('static', filename='city_chart.png') }}"
-class="img-fluid">
+    <div class="card-body">
+        <canvas id="cityChart"></canvas>
+    </div>
+</div>
 
-<br><br>
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-success text-white">
+        景點類型圓餅圖
+    </div>
 
-<h2>景點類型圓餅圖</h2>
+    <div class="card-body">
+        <canvas id="categoryChart"></canvas>
+    </div>
+</div>
 
-<img
-src="{{ url_for('static', filename='category_chart.png') }}"
-class="img-fluid">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const cityData = {{ city_data | tojson }};
+    const categoryData = {{ category_data | tojson }};
+
+    const cityLabels = cityData.map(item => item[0]);
+    const cityCounts = cityData.map(item => item[1]);
+
+    const categoryLabels = categoryData.map(item => item[0]);
+    const categoryCounts = categoryData.map(item => item[1]);
+
+    new Chart(document.getElementById("cityChart"), {
+        type: "bar",
+        data: {
+            labels: cityLabels,
+            datasets: [{
+                label: "景點數量",
+                data: cityCounts
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById("categoryChart"), {
+        type: "pie",
+        data: {
+            labels: categoryLabels,
+            datasets: [{
+                label: "景點類型",
+                data: categoryCounts
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+
 {% endblock %}
