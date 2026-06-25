@@ -35,7 +35,7 @@
 ## 系統展示
 
 GitHub：
-https://github.com/kkkkwx730/taiwan-tourism-analysis
+[https://github.com/kkkkwx730/taiwan-tourism-analysis](https://github.com/kkkwx730/taiwan-tourism-analysis)
 
 網站：
 https://one04-job-analysis.onrender.com
