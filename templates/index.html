@@ -2,118 +2,44 @@
 
 {% block content %}
 
-<div class="row">
+<div class="p-5 mb-5 rounded-4 shadow-sm bg-white">
 
-    <div class="col-lg-12">
+    <div class="row align-items-center">
 
-        <div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+        <div class="col-lg-8">
 
-            <h1 class="display-5 fw-bold">
+            <h1 class="display-4 fw-bold mb-4">
                 台灣旅遊景點分析系統
             </h1>
 
-            <p class="lead">
-                使用 Playwright 蒐集台灣旅遊景點資料，
-                儲存於 Render PostgreSQL，
-                並利用 Flask 建立景點查詢與資料分析平台。
+            <p class="lead mb-4">
+                本系統使用 Playwright 蒐集台灣旅遊景點資料，
+                並將資料儲存於 Render PostgreSQL 資料庫，
+                再透過 Flask 建立景點查詢與資料分析平台。
             </p>
 
-            <a href="/attractions" class="btn btn-primary btn-lg">
+            <a href="/attractions" class="btn btn-primary btn-lg me-2">
                 開始查詢景點
+            </a>
+
+            <a href="/analysis" class="btn btn-outline-success btn-lg">
+                查看資料分析
             </a>
 
         </div>
 
-    </div>
+        <div class="col-lg-4 text-center mt-4 mt-lg-0">
 
-</div>
-
-<div class="row">
-
-    <div class="col-md-4">
-
-        <div class="card shadow-sm">
-
-            <div class="card-body">
-
-                <h3>
-                    景點資料
-                </h3>
-
-                <p>
-                    查看所有景點資料。
-                </p>
-
-                <a href="/attractions"
-                   class="btn btn-outline-primary">
-
-                    查看
-
-                </a>
-
+            <div class="display-1">
+                🗺️
             </div>
 
-        </div>
-
-    </div>
-
-    <div class="col-md-4">
-
-        <div class="card shadow-sm">
-
-            <div class="card-body">
-
-                <h3>
-                    資料分析
-                </h3>
-
-                <p>
-                    查看縣市與景點類型分析。
-                </p>
-
-                <a href="/analysis"
-                   class="btn btn-outline-success">
-
-                    查看
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="col-md-4">
-
-    <div class="card shadow-sm h-100">
-
-        <div class="card-body">
-
-            <h2>系統資訊</h2>
-
-            <ul class="list-group list-group-flush mb-3">
-
-                <li class="list-group-item">
-                    🕷️ Playwright 爬蟲
-                </li>
-
-                <li class="list-group-item">
-                    🌐 Flask Web
-                </li>
-
-                <li class="list-group-item">
-                    🗄️ PostgreSQL 資料庫
-                </li>
-
-                <li class="list-group-item">
-                    ☁️ Render 雲端部署
-                </li>
-
-            </ul>
+            <h4 class="mt-3">
+                Taiwan Tourism Data
+            </h4>
 
             <span class="badge bg-success fs-6">
-                ✓ 系統正常運作
+                System Online
             </span>
 
         </div>
@@ -121,6 +47,146 @@
     </div>
 
 </div>
+
+<div class="row mb-5">
+
+    <div class="col-md-4 mb-3">
+
+        <div class="card shadow-sm h-100 border-0">
+
+            <div class="card-body">
+
+                <div class="display-5 mb-3">
+                    🔍
+                </div>
+
+                <h2>景點資料</h2>
+
+                <p>
+                    查詢景點名稱、縣市與景點類型，並可連結 Google 搜尋更多資料。
+                </p>
+
+                <a href="/attractions" class="btn btn-outline-primary">
+                    查看景點
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mb-3">
+
+        <div class="card shadow-sm h-100 border-0">
+
+            <div class="card-body">
+
+                <div class="display-5 mb-3">
+                    📊
+                </div>
+
+                <h2>資料分析</h2>
+
+                <p>
+                    統計各縣市景點數量，並分析不同景點類型的分布情形。
+                </p>
+
+                <a href="/analysis" class="btn btn-outline-success">
+                    查看分析
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mb-3">
+
+        <div class="card shadow-sm h-100 border-0">
+
+            <div class="card-body">
+
+                <div class="display-5 mb-3">
+                    ⚙️
+                </div>
+
+                <h2>系統資訊</h2>
+
+                <ul class="list-group list-group-flush mb-3">
+
+                    <li class="list-group-item">
+                        Playwright 爬蟲
+                    </li>
+
+                    <li class="list-group-item">
+                        Flask Web
+                    </li>
+
+                    <li class="list-group-item">
+                        PostgreSQL 資料庫
+                    </li>
+
+                    <li class="list-group-item">
+                        Render 雲端部署
+                    </li>
+
+                </ul>
+
+                <span class="badge bg-success fs-6">
+                    ✓ 系統正常運作
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="bg-white rounded-4 shadow-sm p-4 mb-5">
+
+    <h2 class="mb-3">
+        專題特色
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-3 mb-3">
+            <div class="p-3 border rounded text-center h-100">
+                <div class="fs-1">🕷️</div>
+                <h5>動態爬蟲</h5>
+                <p class="small">使用 Playwright 蒐集景點資料。</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="p-3 border rounded text-center h-100">
+                <div class="fs-1">🗄️</div>
+                <h5>雲端資料庫</h5>
+                <p class="small">使用 Render PostgreSQL 儲存資料。</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="p-3 border rounded text-center h-100">
+                <div class="fs-1">🔎</div>
+                <h5>景點查詢</h5>
+                <p class="small">可依景點、縣市與類型搜尋。</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="p-3 border rounded text-center h-100">
+                <div class="fs-1">📈</div>
+                <h5>資料分析</h5>
+                <p class="small">以圖表呈現縣市與類型分布。</p>
+            </div>
+        </div>
+
+    </div>
 
 </div>
 
