@@ -30,4 +30,12 @@
 
 ## 作者
 
-柯薇馨
+411170583柯薇馨
+
+## 系統展示
+
+GitHub：
+https://github.com/kkkkwx730/taiwan-tourism-analysis
+
+網站：
+https://one04-job-analysis.onrender.com
