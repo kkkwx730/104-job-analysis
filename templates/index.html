@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-lg-12">
+
+        <div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+
+            <h1 class="display-5 fw-bold">
+                台灣旅遊景點分析系統
+            </h1>
+
+            <p class="lead">
+                使用 Playwright 蒐集台灣旅遊景點資料，
+                儲存於 Render PostgreSQL，
+                並利用 Flask 建立景點查詢與資料分析平台。
+            </p>
+
+            <a href="/attractions" class="btn btn-primary btn-lg">
+                開始查詢景點
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h3>
+                    景點資料
+                </h3>
+
+                <p>
+                    查看所有景點資料。
+                </p>
+
+                <a href="/attractions"
+                   class="btn btn-outline-primary">
+
+                    查看
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h3>
+                    資料分析
+                </h3>
+
+                <p>
+                    查看縣市與景點類型分析。
+                </p>
+
+                <a href="/analysis"
+                   class="btn btn-outline-success">
+
+                    查看
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h3>
+                    PostgreSQL
+                </h3>
+
+                <p>
+                    Render Cloud Database
+                </p>
+
+                <span class="badge bg-success">
+                    Connected
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+
+    <hr>
+
+    台灣旅遊景點分析系統 © 2026
+
+</div>
+
+{% endblock %}

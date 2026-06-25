@@ -1,0 +1,10 @@
+Flask
+gunicorn
+pandas
+matplotlib
+playwright
+selenium
+requests
+psycopg2-binary
+SQLAlchemy
+python-dotenv

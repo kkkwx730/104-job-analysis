@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>資料分析</h1>
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-header bg-primary text-white">
+                各縣市景點數量
+            </div>
+
+            <div class="card-body">
+
+                <table class="table table-bordered table-hover">
+
+                    <thead class="table-primary">
+                        <tr>
+                            <th>縣市</th>
+                            <th>景點數量</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for row in city_data %}
+                        <tr>
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-header bg-success text-white">
+                景點類型數量
+            </div>
+
+            <div class="card-body">
+
+                <table class="table table-bordered table-hover">
+
+                    <thead class="table-success">
+                        <tr>
+                            <th>類型</th>
+                            <th>數量</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for row in category_data %}
+                        <tr>
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<hr>
+
+<h2>各縣市景點數量長條圖</h2>
+
+<img
+src="{{ url_for('static', filename='city_chart.png') }}"
+class="img-fluid">
+
+<br><br>
+
+<h2>景點類型圓餅圖</h2>
+
+<img
+src="{{ url_for('static', filename='category_chart.png') }}"
+class="img-fluid">
+{% endblock %}
