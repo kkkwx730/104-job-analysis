@@ -30,33 +30,37 @@
         <table class="table table-hover table-bordered align-middle">
 
             <thead class="table-primary">
-
                 <tr>
                     <th>景點名稱</th>
                     <th>縣市</th>
                     <th>類型</th>
                     <th>網站</th>
                 </tr>
-
             </thead>
 
             <tbody>
 
                 {% for row in attractions %}
-
                 <tr>
                     <td>{{ row[0] }}</td>
                     <td>{{ row[1] }}</td>
                     <td>{{ row[2] }}</td>
                     <td>
-                        <a href="{{ row[3] }}"
-                           target="_blank"
-                           class="btn btn-sm btn-outline-primary">
-                            查看
-                        </a>
+                        {% if row[3] %}
+                            <a href="{{ row[3] }}"
+                               target="_blank"
+                               class="btn btn-sm btn-outline-primary">
+                                查看
+                            </a>
+                        {% else %}
+                            <a href="https://www.google.com/search?q={{ row[0] }} {{ row[1] }}"
+                               target="_blank"
+                               class="btn btn-sm btn-outline-success">
+                                搜尋
+                            </a>
+                        {% endif %}
                     </td>
                 </tr>
-
                 {% endfor %}
 
             </tbody>
